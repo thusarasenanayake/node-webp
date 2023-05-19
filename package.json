@@ -1,0 +1,31 @@
+{
+  "name": "node-wepp",
+  "version": "0.1.0",
+  "description": "command-line utility to convert and minimize images into webp format",
+  "private": "true",
+  "main": "bin/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thusarasenanayake/node-wepp.git"
+  },
+  "keywords": [
+    "webp"
+  ],
+  "author": "Thusara Senanayake <89896736+thusarasenanayake@users.noreply.github.com> (http://thusarasenanayake.github.io)",
+  "license": "MIT",
+  "scripts": {
+    "start": "",
+    "dev": "",
+    "build": "",
+    "test": "",
+    "predeploy": "",
+    "deploy": ""
+  },
+  "bin": {
+    "node-webp": "./bin/index.js"
+  },
+  "bugs": {
+    "url": "https://github.com/thusarasenanayake/node-wepp/issues"
+  },
+  "homepage": "https://github.com/thusarasenanayake/node-wepp#readme"
+}
