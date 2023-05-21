@@ -9,14 +9,16 @@
     "url": "git+https://github.com/thusarasenanayake/node-wepp.git"
   },
   "keywords": [
-    "webp"
+    "webp",
+    "node-webp",
+    "image converter"
   ],
   "author": "Thusara Senanayake <89896736+thusarasenanayake@users.noreply.github.com> (http://thusarasenanayake.github.io)",
   "license": "MIT",
   "scripts": {
     "start": "",
     "dev": "",
-    "build": "",
+    "build": "pkg .",
     "test": "",
     "predeploy": "",
     "deploy": ""
@@ -27,5 +29,24 @@
   "bugs": {
     "url": "https://github.com/thusarasenanayake/node-wepp/issues"
   },
-  "homepage": "https://github.com/thusarasenanayake/node-wepp#readme"
+  "homepage": "https://github.com/thusarasenanayake/node-wepp#readme",
+  "dependencies": {
+    "boxen": "5.1.2",
+    "chalk": "4.1.2",
+    "figlet": "1.6.0",
+    "gulp": "4.0.2",
+    "gulp-imagemin": "7.1.0",
+    "gulp-webp": "4.0.1",
+    "yargs": "17.7.2"
+  },
+  "devDependencies": {
+    "pkg": "5.8.1"
+  },
+  "pkg": {
+    "assets": [
+      "node_modules/figlet/fonts/Standard.flf"
+    ],
+    "outputPath": "dist"
+    
+  }
 }
