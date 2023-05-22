@@ -5,14 +5,12 @@ const allowedImgTypes = [
   ".png",
   ".jpg",
   ".jpeg",
-  ".gif",
-  ".svg",
   ".bmp",
   ".tiff",
-  ".webp"
+  ".webp",
 ];
 
-module.exports = function resolvePath(path) {
+function resolvePath(path) {
   try {
     const fullPath = resolve(path);
 
@@ -32,9 +30,15 @@ module.exports = function resolvePath(path) {
       throw new Error(err.message);
     }
   }
-};
+}
+
+function isDir(path) {
+  return statSync(resolve(path)).isDirectory();
+}
 
 function isImage(filePath) {
   const fileExtension = extname(filePath);
   return fileExtension && allowedImgTypes.includes(fileExtension);
 }
+
+module.exports = { isDir, resolvePath };

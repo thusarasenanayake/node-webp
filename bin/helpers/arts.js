@@ -47,13 +47,15 @@ function getFiglet(text = "node webp") {
 async function getHelpMessage() {
   const text = `
 node-webp cat.png dog.png images/
+node-webp images/ --watch
 
 Commands:
   node-webp help   Show help
 
 Options:
-      --version    Show version number                                  
-  -h, --help       Show help    
+--help     Show help                     [boolean]
+--version  Show version number           [boolean]
+-w, --watch  Run in watch mode           [path]
 
 Bugs:
   ${chalk.yellow("https://github.com/thusarasenanayake/node-webp")}

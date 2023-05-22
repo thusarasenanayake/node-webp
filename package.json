@@ -1,5 +1,5 @@
 {
-  "name": "node-wepp",
+  "name": "node-webp",
   "version": "0.1.0",
   "description": "command-line utility to convert and minimize images into webp format",
   "private": "true",
@@ -47,6 +47,5 @@
       "node_modules/figlet/fonts/Standard.flf"
     ],
     "outputPath": "dist"
-    
   }
 }
