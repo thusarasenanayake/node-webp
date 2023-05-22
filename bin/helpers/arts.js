@@ -53,9 +53,9 @@ Commands:
   node-webp help   Show help
 
 Options:
---help     Show help                     [boolean]
---version  Show version number           [boolean]
--w, --watch  Run in watch mode           [path]
+--help     Show help                           [boolean]
+--version  Show version number                 [boolean]
+-w, --watch  Run in watch mode                 [path]
 
 Bugs:
   ${chalk.yellow("https://github.com/thusarasenanayake/node-webp")}
