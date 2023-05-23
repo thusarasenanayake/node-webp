@@ -2,13 +2,16 @@ const chalk = require("chalk");
 const { src, dest, task, watch } = require("gulp");
 const imagemin = require("gulp-imagemin");
 const gulpWebp = require("gulp-webp");
-const { isDir } = require("./nw-fs");
+const { resolvePath } = require("./nw-fs");
+const { resolve } = require("path");
 
-module.exports = function convert(srcPath, options, done) {
+module.exports = function convert(path, options, done) {
+  const resolvedPath = resolvePath(path);
+
   task("convert", function (cb) {
     try {
       return (
-        src(srcPath)
+        src(resolvedPath)
           .on("error", function (err) {
             cb(err);
           })
@@ -57,9 +60,8 @@ module.exports = function convert(srcPath, options, done) {
     //     chalk.red("node-webp: only directories are supported in watch mode")
     //   );
 
-    watch(srcPath, () => task("convert")(done));
-    console.log(chalk.green(`node-webp: watching on ${options.dir}`));
-    
+    watch(resolvedPath, () => task("convert")(done));
+    console.log(chalk.green(`node-webp: watching on ${path}`));
   } else {
     task("convert")(done);
   }

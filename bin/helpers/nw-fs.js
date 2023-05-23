@@ -1,21 +1,18 @@
 const { statSync } = require("fs");
 const { resolve, extname, basename } = require("path");
 
-const allowedImgTypes = [
-  ".png",
-  ".jpg",
-  ".jpeg",
-  ".bmp",
-  ".tiff",
-  ".webp",
-];
+const allowedImgTypes = [".png", ".jpg", ".jpeg", ".bmp", ".tiff", ".webp"];
 
 function resolvePath(path) {
   try {
     const fullPath = resolve(path);
 
     if (statSync(fullPath).isDirectory()) {
-      return fullPath + `/**/*{${allowedImgTypes.toString()}}`;
+      const pathArray = [
+        fullPath + `/**/*{${allowedImgTypes.toString()}}`,
+        `!${resolve(path)}/output/**/*`,
+      ];
+      return pathArray;
     } else {
       if (isImage(fullPath)) {
         return fullPath;

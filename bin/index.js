@@ -54,11 +54,8 @@ argv
       };
 
       paths.forEach((path) => {
-        // only used by watch mode
-        options.dir = path;
         try {
-          const cleanPath = resolvePath(path);
-          convert(cleanPath, options, function (err) {
+          convert(path, options, function (err) {
             if (err) {
               log(chalk.red(`node-webp: ${err.message}`));
             } else {
